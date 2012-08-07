@@ -70,12 +70,12 @@ public class MutableRepresentation extends BaseRepresentation implements Represe
     }
 
     public Representation withFieldBasedRepresentation(String rel, String href, Object o) {
-        __.withFieldBasedSubresource(rel, href, o);
+        __.withFieldBasedRepresentation(rel, href, o);
         return this;
     }
 
     public Representation withBeanBasedRepresentation(String rel, String href, Object o) {
-        __.withBeanBasedSubresource(rel, href, o);
+        __.withBeanBasedRepresentation(rel, href, o);
         return this;
     }
 
@@ -86,7 +86,7 @@ public class MutableRepresentation extends BaseRepresentation implements Represe
 
     public Representation withRepresentation(String rel, Representation representation) {
         com.theoryinpractise.halbuilder.spi.ReadableRepresentation readableRepresentation = ((BaseRepresentation) representation).get_();
-        __.withSubresource(rel, readableRepresentation);
+        __.withRepresentation(rel, readableRepresentation);
         return this;
     }
 
