@@ -21,6 +21,21 @@
         <url>http://github.com/HalBuilder/halbuilder-guava</url>
     </scm>
 
+    <developers>
+        <developer>
+            <id>talios</id>
+            <name>Mark Derricutt</name>
+            <email>mark@talios.com</email>
+            <url>http://twitter.com/talios</url>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>Apache License</name>
+        </license>
+    </licenses>
+
     <distributionManagement>
         <repository>
             <id>sonatype-staging</id>
@@ -53,8 +68,48 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <preparationGoals>clean install</preparationGoals>
+                    <goals>deploy</goals>
+                    <pushChanges>false</pushChanges>
+                    <localCheckout>true</localCheckout>
+                    <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
     <dependencies>
         <dependency>
