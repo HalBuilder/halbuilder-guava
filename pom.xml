@@ -18,7 +18,7 @@
     <scm>
         <connection>scm:git:git@github.com:HalBuilder/halbuilder-guava.git</connection>
         <developerConnection>scm:git:git@github.com:HalBuilder/halbuilder-guava.git</developerConnection>
-        <url>http://github.com/HalBuilder/halbuilder-api</url>
+        <url>http://github.com/HalBuilder/halbuilder-guava</url>
     </scm>
 
     <distributionManagement>
