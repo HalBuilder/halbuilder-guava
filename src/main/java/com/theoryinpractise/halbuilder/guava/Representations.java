@@ -1,4 +1,4 @@
-package com.theoryinpractise.halbuilder.java;
+package com.theoryinpractise.halbuilder.guava;
 
 import com.google.common.base.Function;
 import com.google.common.base.Optional;
@@ -26,9 +26,9 @@ public class Representations {
                  Optional.of(predicate),
                  Optional.<String>absent(),
                  Optional.<String>absent(),
+                 Optional.<String>absent(),
                  Optional.<String>absent());
     }
-
 
     /**
      * Add a link to this resource
@@ -46,11 +46,10 @@ public class Representations {
      * @param rel
      * @param href The target href for the link, relative to the href of this resource.
      */
-    public static void withLink(Representation representation, String rel, String href, Optional<Predicate<ReadableRepresentation>> predicate, Optional<String> name, Optional<String> title, Optional<String> hreflang) {
+    public static void withLink(Representation representation, String rel, String href, Optional<Predicate<ReadableRepresentation>> predicate, Optional<String> name, Optional<String> title, Optional<String> hreflang, Optional<String> profile) {
         if (predicate.or(Predicates.<ReadableRepresentation>alwaysTrue()).apply(representation)) {
-            representation.withLink(rel, href, name.orNull(), title.orNull(), hreflang.orNull());
+            representation.withLink(rel, href, name.orNull(), title.orNull(), hreflang.orNull(), profile.orNull());
         }
-
     }
 
     /**
@@ -59,8 +58,8 @@ public class Representations {
      * @param rel
      * @param uri The target URI for the link, possibly relative to the href of this resource.
      */
-    public static void withLink(Representation representation, String rel, URI uri, Optional<Predicate<ReadableRepresentation>> predicate, Optional<String> name, Optional<String> title, Optional<String> hreflang) {
-        withLink(representation, rel, uri.toASCIIString(), predicate, name, title, hreflang);
+    public static void withLink(Representation representation, String rel, URI uri, Optional<Predicate<ReadableRepresentation>> predicate, Optional<String> name, Optional<String> title, Optional<String> hreflang, Optional<String> profile) {
+        withLink(representation, rel, uri.toASCIIString(), predicate, name, title, hreflang, profile);
     }
 
     public static Optional<Link> tryResourceLink(ReadableRepresentation representation) {

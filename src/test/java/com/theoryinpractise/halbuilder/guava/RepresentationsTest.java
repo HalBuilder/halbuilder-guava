@@ -1,4 +1,4 @@
-package com.theoryinpractise.halbuilder.java;
+package com.theoryinpractise.halbuilder.guava;
 
 import com.theoryinpractise.halbuilder.DefaultRepresentationFactory;
 import com.theoryinpractise.halbuilder.api.ReadableRepresentation;
