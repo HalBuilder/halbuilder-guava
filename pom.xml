@@ -3,16 +3,36 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.theoryinpractise</groupId>
-    <artifactId>halbuilder-java</artifactId>
+    <artifactId>halbuilder-guava</artifactId>
     <version>2.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>halbuilder-java</name>
-    <url>http://maven.apache.org</url>
+    <name>halbuilder-guava</name>
+    <description>Google Guava Extensions to the HalBuilder Library</description>
+    <url>http://gotohal.net</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <scm>
+        <connection>scm:git:git@github.com:HalBuilder/halbuilder-guava.git</connection>
+        <developerConnection>scm:git:git@github.com:HalBuilder/halbuilder-guava.git</developerConnection>
+        <url>http://github.com/HalBuilder/halbuilder-api</url>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>sonatype-staging</id>
+            <name>oss.sonatype.org Staging Repository</name>
+            <url>http://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+        <snapshotRepository>
+            <id>github-snapshots</id>
+            <name>oss.sonatype.org github Release Repository Snapshot Repository</name>
+            <url>http://oss.sonatype.org/content/repositories/github-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <build>
         <plugins>
