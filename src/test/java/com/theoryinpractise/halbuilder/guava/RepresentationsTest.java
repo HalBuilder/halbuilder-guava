@@ -1,8 +1,8 @@
 package com.theoryinpractise.halbuilder.guava;
 
-import com.theoryinpractise.halbuilder.DefaultRepresentationFactory;
 import com.theoryinpractise.halbuilder.api.ReadableRepresentation;
 import com.theoryinpractise.halbuilder.api.RepresentationFactory;
+import com.theoryinpractise.halbuilder.xml.XmlRepresentationFactory;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -17,7 +17,7 @@ public class RepresentationsTest {
 
     @BeforeClass
     public void init() {
-        representationFactory = new DefaultRepresentationFactory();
+        representationFactory = new XmlRepresentationFactory();
         representation = representationFactory.readRepresentation(new InputStreamReader(InterfaceSatisfactionTest.class.getResourceAsStream("/example.xml")));
     }
 

@@ -1,9 +1,9 @@
 package com.theoryinpractise.halbuilder.guava;
 
 import com.google.common.base.Function;
-import com.theoryinpractise.halbuilder.DefaultRepresentationFactory;
 import com.theoryinpractise.halbuilder.api.ReadableRepresentation;
 import com.theoryinpractise.halbuilder.api.RepresentationFactory;
+import com.theoryinpractise.halbuilder.xml.XmlRepresentationFactory;
 import org.testng.annotations.Test;
 
 import javax.annotation.Nullable;
@@ -13,7 +13,7 @@ import static org.fest.assertions.api.Assertions.assertThat;
 
 public class InterfaceSatisfactionTest {
 
-    private RepresentationFactory representationFactory = new DefaultRepresentationFactory();
+    private RepresentationFactory representationFactory = new XmlRepresentationFactory();
 
     public static interface IPerson {
         Integer getAge();

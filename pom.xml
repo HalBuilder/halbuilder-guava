@@ -62,7 +62,7 @@
                         </goals>
                         <configuration>
                             <resourceBundles>
-                                <resourceBundle>com.theoryinpractise:halbuilder-test-resources:2.0.1</resourceBundle>
+                                <resourceBundle>com.theoryinpractise:halbuilder-test-resources:3.0.2</resourceBundle>
                             </resourceBundles>
                         </configuration>
                     </execution>
@@ -71,6 +71,13 @@
             <plugin>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.3</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.scm</groupId>
+                        <artifactId>maven-scm-provider-gitexe</artifactId>
+                        <version>1.8.1</version>
+                    </dependency>
+                </dependencies>
                 <configuration>
                     <preparationGoals>clean install</preparationGoals>
                     <goals>deploy</goals>
@@ -115,12 +122,12 @@
         <dependency>
             <groupId>com.theoryinpractise</groupId>
             <artifactId>halbuilder-api</artifactId>
-            <version>[2.0.0,3.0.0)</version>
+            <version>[2.2.0,3.0.0)</version>
         </dependency>
         <dependency>
             <groupId>com.theoryinpractise</groupId>
             <artifactId>halbuilder-core</artifactId>
-            <version>[2.0.0,3.0.0)</version>
+            <version>[3.1.0,4.0.0)</version>
         </dependency>
 
         <dependency>
@@ -130,15 +137,22 @@
         </dependency>
 
         <dependency>
+            <groupId>com.theoryinpractise</groupId>
+            <artifactId>halbuilder-xml</artifactId>
+            <version>[3.0.0,4.0.0)</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.8</version>
+            <version>6.8.7</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.easytesting</groupId>
             <artifactId>fest-assert-core</artifactId>
-            <version>2.0M7</version>
+            <version>2.0M10</version>
             <scope>test</scope>
         </dependency>
 
