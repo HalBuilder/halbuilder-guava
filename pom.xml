@@ -122,7 +122,7 @@
         <dependency>
             <groupId>com.theoryinpractise</groupId>
             <artifactId>halbuilder-api</artifactId>
-            <version>[2.2.0,3.0.0)</version>
+            <version>[3.0.0,4.0.0)</version>
         </dependency>
         <dependency>
             <groupId>com.theoryinpractise</groupId>
@@ -133,7 +133,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>15.0</version>
+            <version>17.0</version>
         </dependency>
 
         <dependency>
@@ -146,7 +146,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.8.7</version>
+            <version>6.8.8</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -155,7 +155,6 @@
             <version>2.0M10</version>
             <scope>test</scope>
         </dependency>
-
 
     </dependencies>
 </project>
