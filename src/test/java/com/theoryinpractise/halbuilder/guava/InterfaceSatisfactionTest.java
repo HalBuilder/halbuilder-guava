@@ -44,7 +44,7 @@ public class InterfaceSatisfactionTest {
     @Test
     public void testFunctionalInterfaceSatisfaction() {
 
-        ReadableRepresentation representation = representationFactory.readRepresentation(new InputStreamReader(InterfaceSatisfactionTest.class.getResourceAsStream("/example.xml")));
+        ReadableRepresentation representation = representationFactory.readRepresentation(RepresentationFactory.HAL_XML, new InputStreamReader(InterfaceSatisfactionTest.class.getResourceAsStream("/example.xml")));
 
         String name = Representations.ifSatisfiedBy(representation, IPerson.class, new Function<IPerson, String>() {
             public String apply(@Nullable IPerson iPerson) {

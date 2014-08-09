@@ -18,7 +18,7 @@ public class RepresentationsTest {
     @BeforeClass
     public void init() {
         representationFactory = new XmlRepresentationFactory();
-        representation = representationFactory.readRepresentation(new InputStreamReader(InterfaceSatisfactionTest.class.getResourceAsStream("/example.xml")));
+        representation = representationFactory.readRepresentation(RepresentationFactory.HAL_XML, new InputStreamReader(InterfaceSatisfactionTest.class.getResourceAsStream("/example.xml")));
     }
 
     @Test
