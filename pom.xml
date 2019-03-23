@@ -4,7 +4,7 @@
 
     <groupId>com.theoryinpractise</groupId>
     <artifactId>halbuilder-guava</artifactId>
-    <version>4.0.2-SNAPSHOT</version>
+    <version>4.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>halbuilder-guava</name>
@@ -191,12 +191,12 @@
         <dependency>
             <groupId>com.theoryinpractise</groupId>
             <artifactId>halbuilder-api</artifactId>
-            <version>[4.0.0,5.0.0)</version>
+            <version>[4.1.0-SNAPSHOT,5.0.0)</version>
         </dependency>
         <dependency>
             <groupId>com.theoryinpractise</groupId>
             <artifactId>halbuilder-core</artifactId>
-            <version>[4.0.0,5.0.0)</version>
+            <version>[4.1.0-SNAPSHOT,5.0.0)</version>
         </dependency>
 
         <dependency>
@@ -208,7 +208,7 @@
         <dependency>
             <groupId>com.theoryinpractise</groupId>
             <artifactId>halbuilder-xml</artifactId>
-            <version>[4.0.0,5.0.0)</version>
+            <version>[4.1.0-SNAPSHOT,5.0.0)</version>
             <scope>test</scope>
         </dependency>
 
