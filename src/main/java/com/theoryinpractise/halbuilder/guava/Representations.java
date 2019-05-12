@@ -10,7 +10,6 @@ import com.theoryinpractise.halbuilder.api.Representation;
 import com.theoryinpractise.halbuilder.api.RepresentationException;
 import com.theoryinpractise.halbuilder.impl.bytecode.InterfaceContract;
 import com.theoryinpractise.halbuilder.impl.bytecode.InterfaceRenderer;
-
 import java.net.URI;
 import java.util.List;
 

@@ -1,14 +1,13 @@
 package com.theoryinpractise.halbuilder.guava;
 
+import static org.fest.assertions.api.Assertions.assertThat;
+
 import com.theoryinpractise.halbuilder.api.ReadableRepresentation;
 import com.theoryinpractise.halbuilder.api.RepresentationFactory;
 import com.theoryinpractise.halbuilder.xml.XmlRepresentationFactory;
+import java.io.InputStreamReader;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import java.io.InputStreamReader;
-
-import static org.fest.assertions.api.Assertions.assertThat;
 
 public class RepresentationsTest {
 

@@ -1,21 +1,19 @@
 package com.theoryinpractise.halbuilder.guava;
 
-import com.google.common.base.Function;
+import static com.theoryinpractise.halbuilder.guava.Representations.ifSatisfiedBy;
+import static org.fest.assertions.api.Assertions.assertThat;
+
 import com.theoryinpractise.halbuilder.api.ReadableRepresentation;
 import com.theoryinpractise.halbuilder.api.RepresentationFactory;
 import com.theoryinpractise.halbuilder.xml.XmlRepresentationFactory;
-import org.testng.annotations.Test;
-
-import javax.annotation.Nullable;
 import java.io.InputStreamReader;
-
-import static org.fest.assertions.api.Assertions.assertThat;
+import org.testng.annotations.Test;
 
 public class InterfaceSatisfactionTest {
 
   private RepresentationFactory representationFactory = new XmlRepresentationFactory();
 
-  public static interface IPerson {
+  public interface IPerson {
     Integer getAge();
 
     Boolean getExpired();
@@ -25,19 +23,19 @@ public class InterfaceSatisfactionTest {
     String getName();
   }
 
-  public static interface INamed {
+  public interface INamed {
     String name();
   }
 
-  public static interface IJob {
+  public interface IJob {
     Integer getJobId();
   }
 
-  public static interface ISimpleJob {
+  public interface ISimpleJob {
     Integer jobId();
   }
 
-  public static interface INullprop {
+  public interface INullprop {
     String nullprop();
   }
 
@@ -50,16 +48,7 @@ public class InterfaceSatisfactionTest {
             new InputStreamReader(
                 InterfaceSatisfactionTest.class.getResourceAsStream("/example.xml")));
 
-    String name =
-        Representations.ifSatisfiedBy(
-                representation,
-                IPerson.class,
-                new Function<IPerson, String>() {
-                  public String apply(@Nullable IPerson iPerson) {
-                    return iPerson.getName();
-                  }
-                })
-            .get();
+    String name = ifSatisfiedBy(representation, IPerson.class, iPerson -> iPerson.getName()).get();
 
     assertThat(name).isEqualTo("Example Resource");
   }

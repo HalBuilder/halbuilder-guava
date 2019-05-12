@@ -29,8 +29,8 @@
         <connection>scm:git:git@github.com:HalBuilder/halbuilder-guava.git</connection>
         <developerConnection>scm:git:git@github.com:HalBuilder/halbuilder-guava.git</developerConnection>
         <url>http://github.com/HalBuilder/halbuilder-guava</url>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
     <distributionManagement>
         <repository>
             <id>sonatype-staging</id>
@@ -46,6 +46,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jacoco.check.skip>true</jacoco.check.skip>
     </properties>
 
     <dependencies>
