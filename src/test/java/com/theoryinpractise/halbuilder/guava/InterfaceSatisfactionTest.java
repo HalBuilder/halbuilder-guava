@@ -13,47 +13,54 @@ import static org.fest.assertions.api.Assertions.assertThat;
 
 public class InterfaceSatisfactionTest {
 
-    private RepresentationFactory representationFactory = new XmlRepresentationFactory();
+  private RepresentationFactory representationFactory = new XmlRepresentationFactory();
 
-    public static interface IPerson {
-        Integer getAge();
+  public static interface IPerson {
+    Integer getAge();
 
-        Boolean getExpired();
+    Boolean getExpired();
 
-        Integer getId();
+    Integer getId();
 
-        String getName();
-    }
+    String getName();
+  }
 
-    public static interface INamed {
-        String name();
-    }
+  public static interface INamed {
+    String name();
+  }
 
-    public static interface IJob {
-        Integer getJobId();
-    }
+  public static interface IJob {
+    Integer getJobId();
+  }
 
-    public static interface ISimpleJob {
-        Integer jobId();
-    }
+  public static interface ISimpleJob {
+    Integer jobId();
+  }
 
-    public static interface INullprop {
-        String nullprop();
-    }
+  public static interface INullprop {
+    String nullprop();
+  }
 
-    @Test
-    public void testFunctionalInterfaceSatisfaction() {
+  @Test
+  public void testFunctionalInterfaceSatisfaction() {
 
-        ReadableRepresentation representation = representationFactory.readRepresentation(RepresentationFactory.HAL_XML, new InputStreamReader(InterfaceSatisfactionTest.class.getResourceAsStream("/example.xml")));
+    ReadableRepresentation representation =
+        representationFactory.readRepresentation(
+            RepresentationFactory.HAL_XML,
+            new InputStreamReader(
+                InterfaceSatisfactionTest.class.getResourceAsStream("/example.xml")));
 
-        String name = Representations.ifSatisfiedBy(representation, IPerson.class, new Function<IPerson, String>() {
-            public String apply(@Nullable IPerson iPerson) {
-                return iPerson.getName();
-            }
-        }).get();
+    String name =
+        Representations.ifSatisfiedBy(
+                representation,
+                IPerson.class,
+                new Function<IPerson, String>() {
+                  public String apply(@Nullable IPerson iPerson) {
+                    return iPerson.getName();
+                  }
+                })
+            .get();
 
-        assertThat(name).isEqualTo("Example Resource");
-
-    }
-
+    assertThat(name).isEqualTo("Example Resource");
+  }
 }

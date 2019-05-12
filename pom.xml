@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -9,17 +10,11 @@
     <name>halbuilder-guava</name>
     <description>Google Guava Extensions to the HalBuilder Library</description>
     <url>http://gotohal.net</url>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
-    <scm>
-        <connection>scm:git:git@github.com:HalBuilder/halbuilder-guava.git</connection>
-        <developerConnection>scm:git:git@github.com:HalBuilder/halbuilder-guava.git</developerConnection>
-        <url>http://github.com/HalBuilder/halbuilder-guava</url>
-      <tag>HEAD</tag>
-  </scm>
+    <licenses>
+        <license>
+            <name>Apache License</name>
+        </license>
+    </licenses>
 
     <developers>
         <developer>
@@ -30,12 +25,12 @@
         </developer>
     </developers>
 
-    <licenses>
-        <license>
-            <name>Apache License</name>
-        </license>
-    </licenses>
-
+    <scm>
+        <connection>scm:git:git@github.com:HalBuilder/halbuilder-guava.git</connection>
+        <developerConnection>scm:git:git@github.com:HalBuilder/halbuilder-guava.git</developerConnection>
+        <url>http://github.com/HalBuilder/halbuilder-guava</url>
+      <tag>HEAD</tag>
+  </scm>
     <distributionManagement>
         <repository>
             <id>sonatype-staging</id>
@@ -48,6 +43,50 @@
             <url>http://oss.sonatype.org/content/repositories/github-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.theoryinpractise</groupId>
+            <artifactId>halbuilder-api</artifactId>
+            <version>4.1.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.theoryinpractise</groupId>
+            <artifactId>halbuilder-core</artifactId>
+            <version>4.1.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>17.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.theoryinpractise</groupId>
+            <artifactId>halbuilder-xml</artifactId>
+            <version>4.1.1-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.8.8</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.easytesting</groupId>
+            <artifactId>fest-assert-core</artifactId>
+            <version>2.0M10</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
 
     <build>
         <plugins>
@@ -121,44 +160,4 @@
             </build>
         </profile>
     </profiles>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.theoryinpractise</groupId>
-            <artifactId>halbuilder-api</artifactId>
-            <version>4.1.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.theoryinpractise</groupId>
-            <artifactId>halbuilder-core</artifactId>
-            <version>4.1.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>17.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.theoryinpractise</groupId>
-            <artifactId>halbuilder-xml</artifactId>
-            <version>4.1.1-SNAPSHOT</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>6.8.8</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.easytesting</groupId>
-            <artifactId>fest-assert-core</artifactId>
-            <version>2.0M10</version>
-            <scope>test</scope>
-        </dependency>
-
-    </dependencies>
 </project>
