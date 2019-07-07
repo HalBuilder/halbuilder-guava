@@ -19,9 +19,7 @@ public class RepresentationsTest {
     representationFactory = new XmlRepresentationFactory();
     representation =
         representationFactory.readRepresentation(
-            RepresentationFactory.HAL_XML,
-            new InputStreamReader(
-                InterfaceSatisfactionTest.class.getResourceAsStream("/example.xml")));
+            RepresentationFactory.HAL_XML, new InputStreamReader(InterfaceSatisfactionTest.class.getResourceAsStream("/example.xml")));
   }
 
   @Test
@@ -33,8 +31,6 @@ public class RepresentationsTest {
   @Test
   public void testResourceLink() {
     assertThat(Representations.tryResourceLink(representation).isPresent()).isTrue();
-    assertThat(
-            Representations.tryResourceLink(representationFactory.newRepresentation()).isPresent())
-        .isFalse();
+    assertThat(Representations.tryResourceLink(representationFactory.newRepresentation()).isPresent()).isFalse();
   }
 }

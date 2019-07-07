@@ -20,11 +20,7 @@ public class Representations {
    * @param rel
    * @param href The target href for the link, relative to the href of this resource.
    */
-  public static void withLink(
-      Representation representation,
-      String rel,
-      String href,
-      Predicate<ReadableRepresentation> predicate) {
+  public static void withLink(Representation representation, String rel, String href, Predicate<ReadableRepresentation> predicate) {
     withLink(
         representation,
         rel,
@@ -42,11 +38,7 @@ public class Representations {
    * @param rel
    * @param uri The target URI for the link, possibly relative to the href of this resource.
    */
-  public static void withLink(
-      Representation representation,
-      String rel,
-      URI uri,
-      Predicate<ReadableRepresentation> predicate) {
+  public static void withLink(Representation representation, String rel, URI uri, Predicate<ReadableRepresentation> predicate) {
     withLink(representation, rel, uri.toASCIIString(), predicate);
   }
 
@@ -66,8 +58,7 @@ public class Representations {
       Optional<String> hreflang,
       Optional<String> profile) {
     if (predicate.or(Predicates.<ReadableRepresentation>alwaysTrue()).apply(representation)) {
-      representation.withLink(
-          rel, href, name.orNull(), title.orNull(), hreflang.orNull(), profile.orNull());
+      representation.withLink(rel, href, name.orNull(), title.orNull(), hreflang.orNull(), profile.orNull());
     }
   }
 
@@ -103,8 +94,7 @@ public class Representations {
    * @param predicate The predicate to check against in the embedded resources
    * @return A List of matching objects (properties, links, resource)
    */
-  List<? extends ReadableRepresentation> getResources(
-      ReadableRepresentation representation, Predicate<ReadableRepresentation> predicate) {
+  List<? extends ReadableRepresentation> getResources(ReadableRepresentation representation, Predicate<ReadableRepresentation> predicate) {
     throw new UnsupportedOperationException("not implemented yet");
   }
 
@@ -123,11 +113,9 @@ public class Representations {
   }
 
   /**
-   * Returns an optional result of applying the provided function if the resource is satisified by
-   * the provided interface.
+   * Returns an optional result of applying the provided function if the resource is satisified by the provided interface.
    *
-   * <p>Interface satisfaction is determined by all interface methods being resolvable to properties
-   * on the resource.
+   * <p>Interface satisfaction is determined by all interface methods being resolvable to properties on the resource.
    *
    * @param anInterface The interface to check
    * @param function The function to apply
@@ -135,8 +123,7 @@ public class Representations {
    * @param <V> A return value
    * @return A Guava Optional of the functions return value.
    */
-  public static <T, V> Optional<V> ifSatisfiedBy(
-      ReadableRepresentation representation, Class<T> anInterface, Function<T, V> function) {
+  public static <T, V> Optional<V> ifSatisfiedBy(ReadableRepresentation representation, Class<T> anInterface, Function<T, V> function) {
     if (InterfaceContract.newInterfaceContract(anInterface).isSatisfiedBy(representation)) {
       T proxy = InterfaceRenderer.newInterfaceRenderer(anInterface).render(representation);
       return Optional.of(function.apply(proxy));

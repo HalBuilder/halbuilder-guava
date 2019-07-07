@@ -44,9 +44,7 @@ public class InterfaceSatisfactionTest {
 
     ReadableRepresentation representation =
         representationFactory.readRepresentation(
-            RepresentationFactory.HAL_XML,
-            new InputStreamReader(
-                InterfaceSatisfactionTest.class.getResourceAsStream("/example.xml")));
+            RepresentationFactory.HAL_XML, new InputStreamReader(InterfaceSatisfactionTest.class.getResourceAsStream("/example.xml")));
 
     String name = ifSatisfiedBy(representation, IPerson.class, iPerson -> iPerson.getName()).get();
 
