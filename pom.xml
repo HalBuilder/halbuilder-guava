@@ -4,7 +4,7 @@
 
   <groupId>com.theoryinpractise</groupId>
   <artifactId>halbuilder-guava</artifactId>
-  <version>4.1.1-SNAPSHOT</version>
+  <version>4.1.1</version>
   <packaging>jar</packaging>
 
   <name>halbuilder-guava</name>
@@ -28,7 +28,7 @@
   <scm>
     <connection>scm:git:git@github.com:HalBuilder/halbuilder-guava.git</connection>
     <developerConnection>scm:git:git@github.com:HalBuilder/halbuilder-guava.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>halbuilder-guava-4.1.1</tag>
     <url>http://github.com/HalBuilder/halbuilder-guava</url>
   </scm>
   <distributionManagement>
