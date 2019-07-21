@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.theoryinpractise</groupId>
   <artifactId>halbuilder-guava</artifactId>
   <version>4.1.1-SNAPSHOT</version>
   <packaging>jar</packaging>
+
   <name>halbuilder-guava</name>
   <description>Google Guava Extensions to the HalBuilder Library</description>
   <url>http://gotohal.net</url>
@@ -13,6 +15,7 @@
       <name>Apache License</name>
     </license>
   </licenses>
+
   <developers>
     <developer>
       <id>talios</id>
@@ -21,6 +24,7 @@
       <url>http://twitter.com/talios</url>
     </developer>
   </developers>
+
   <scm>
     <connection>scm:git:git@github.com:HalBuilder/halbuilder-guava.git</connection>
     <developerConnection>scm:git:git@github.com:HalBuilder/halbuilder-guava.git</developerConnection>
@@ -39,11 +43,13 @@
       <url>https://oss.sonatype.org/content/repositories/github-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
+
   <properties>
     <jacoco.check.skip>true</jacoco.check.skip>
     <project.Automatic-Module-Name>com.theoryinpractive.halbuilder.guava</project.Automatic-Module-Name>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+
   <dependencies>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -59,7 +65,7 @@
     <dependency>
       <groupId>com.theoryinpractise</groupId>
       <artifactId>halbuilder-api</artifactId>
-      <version>4.1.1-SNAPSHOT</version>
+      <version>4.1.1</version>
     </dependency>
     <dependency>
       <groupId>com.theoryinpractise</groupId>
@@ -67,15 +73,15 @@
       <version>4.1.1-SNAPSHOT</version>
     </dependency>
     <dependency>
-      <groupId>com.theoryinpractise</groupId>
-      <artifactId>halbuilder-xml</artifactId>
-      <version>4.1.1-SNAPSHOT</version>
+      <groupId>com.google.truth</groupId>
+      <artifactId>truth</artifactId>
+      <version>1.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.easytesting</groupId>
-      <artifactId>fest-assert-core</artifactId>
-      <version>2.0M10</version>
+      <groupId>com.theoryinpractise</groupId>
+      <artifactId>halbuilder-xml</artifactId>
+      <version>4.1.1-SNAPSHOT</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -85,6 +91,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
   <build>
     <plugins>
       <plugin>
@@ -121,7 +128,7 @@
             </goals>
             <configuration>
               <resourceBundles>
-                <resourceBundle>com.theoryinpractise:halbuilder-test-resources:4.0.2</resourceBundle>
+                <resourceBundle>com.theoryinpractise:halbuilder-test-resources:4.1.1</resourceBundle>
               </resourceBundles>
             </configuration>
           </execution>
@@ -129,6 +136,7 @@
       </plugin>
     </plugins>
   </build>
+
   <profiles>
     <profile>
       <id>release</id>

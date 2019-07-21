@@ -1,13 +1,14 @@
 package com.theoryinpractise.halbuilder.guava;
 
-import static com.theoryinpractise.halbuilder.guava.Representations.ifSatisfiedBy;
-import static org.fest.assertions.api.Assertions.assertThat;
-
 import com.theoryinpractise.halbuilder.api.ReadableRepresentation;
 import com.theoryinpractise.halbuilder.api.RepresentationFactory;
 import com.theoryinpractise.halbuilder.xml.XmlRepresentationFactory;
-import java.io.InputStreamReader;
 import org.testng.annotations.Test;
+
+import java.io.InputStreamReader;
+
+import static com.google.common.truth.Truth.assertThat;
+import static com.theoryinpractise.halbuilder.guava.Representations.ifSatisfiedBy;
 
 public class InterfaceSatisfactionTest {
 
