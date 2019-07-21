@@ -81,7 +81,7 @@
     <dependency>
       <groupId>com.theoryinpractise</groupId>
       <artifactId>halbuilder-xml</artifactId>
-      <version>4.1.1-SNAPSHOT</version>
+      <version>4.1.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
