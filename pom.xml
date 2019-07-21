@@ -70,7 +70,7 @@
     <dependency>
       <groupId>com.theoryinpractise</groupId>
       <artifactId>halbuilder-core</artifactId>
-      <version>4.1.1-SNAPSHOT</version>
+      <version>4.1.1</version>
     </dependency>
     <dependency>
       <groupId>com.google.truth</groupId>
