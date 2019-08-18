@@ -1,4 +1,23 @@
-target
+#eclipse
+.classpath
+.project
+.settings/
+
+# intellij
 *.iml
-/release.properties
-/pom.xml.releaseBackup
+.idea/
+
+# maven
+pom.xml.releaseBackup
+release.properties
+target/
+
+# MacOS
+._*
+.DS_Store
+
+# Windows
+[Dd]esktop.ini
+Thumbs.db
+
+
